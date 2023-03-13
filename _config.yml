@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: 小陳是個資訊人
+subtitle: 'YU-JUNG, CHEN • Front-end Developer'
 description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+keywords: 前端, Front-end, HTML, CSS, Javascript, Vue
+author: YU-JUNG, CHEN
+language: zh
+timezone: 'Asia/Taipei'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
