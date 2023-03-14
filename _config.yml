@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 小陳是個資訊人
-subtitle: 'YU-JUNG, CHEN • Front-end Developer'
+title: Chenyo.
+subtitle: 'TW 🇹🇼 • Front-end Developer'
 description: ''
 keywords: 前端, Front-end, HTML, CSS, Javascript, Vue
 author: YU-JUNG, CHEN
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
