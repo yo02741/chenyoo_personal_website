@@ -14,7 +14,7 @@ tags:
 
 ---
 
-## Step 1. 發行 Line Notify 權杖
+## 發行 Line Notify 權杖
 > [Line Notify](https://notify-bot.line.me) > 登入後右上角 > 個人頁面 > 滑到最底下的 `發行存取權杖（開發人員用）`
 > 
 > 點擊 『 發行權杖 』
@@ -23,7 +23,7 @@ tags:
 
 ![](https://i.imgur.com/b0LJkSf.png)
 
-## Step 2. 設定 Line Notify 權杖
+## 設定 Line Notify 權杖
 > 輸入權杖名稱 > 選擇接收通知的聊天室 > 發行
 
 ![](https://i.imgur.com/saIfpGn.png)
@@ -42,7 +42,7 @@ tags:
 
 <br />
 
-## Step 3. 撰寫 Python Script
+## 撰寫 Python Script
 > 安裝 Python
 
 > 安裝 requests
@@ -74,14 +74,14 @@ if __name__ == "__main__":
 
 <br />
 
-## Step 4. 執行 / 測試 script
+## 執行 / 測試 script
 > run 看看這個 script 看看效果
 
 ![](https://i.imgur.com/v7AqxCU.png)
 
 <br />
 
-## Step 5. 透過 Crontab 設定排程
+## 透過 Crontab 設定排程
 
 > 撰寫排程
 ```bash
