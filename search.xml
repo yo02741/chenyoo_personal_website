@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>提醒這種小事情交給 Line Notify</title>
+    <url>/2023/03/12/line_notify_assistent/</url>
+    <content><![CDATA[<br />
+
+<blockquote>
+<p>透過 <strong>Line Notify</strong> ∙ <strong>Python</strong> ∙ <strong>Crontab</strong> 實現行動助理</p>
+</blockquote>
+<ul>
+<li>運用 <code>Line Notify</code> 來達到通知的需求</li>
+<li>使用 <code>Python</code> 作為開發語言</li>
+<li>使用 <code>Crontab</code> 達成排程執行</li>
+</ul>
+<hr>
+<h2 id="發行-Line-Notify-權杖"><a href="#發行-Line-Notify-權杖" class="headerlink" title="發行 Line Notify 權杖"></a>發行 Line Notify 權杖</h2><blockquote>
+<p><a href="https://notify-bot.line.me/">Line Notify</a> &gt; 登入後右上角 &gt; 個人頁面 &gt; 滑到最底下的 <code>發行存取權杖（開發人員用）</code></p>
+<p>點擊 『 發行權杖 』</p>
+</blockquote>
+<br />
+
+<p><img src="https://i.imgur.com/b0LJkSf.png"></p>
+<h2 id="設定-Line-Notify-權杖"><a href="#設定-Line-Notify-權杖" class="headerlink" title="設定 Line Notify 權杖"></a>設定 Line Notify 權杖</h2><blockquote>
+<p>輸入權杖名稱 &gt; 選擇接收通知的聊天室 &gt; 發行</p>
+</blockquote>
+<p><img src="https://i.imgur.com/saIfpGn.png"></p>
+<br />
+
+<blockquote>
+<p>複製好 Token 並關閉</p>
+</blockquote>
+<p><img src="https://i.imgur.com/RVzdsmK.png"></p>
+<br />
+
+<blockquote>
+<p>可以發現已連動的服務多了剛剛設定的 <code>TEST !!</code></p>
+</blockquote>
+<p><img src="https://i.imgur.com/AJP9kiO.png"></p>
+<br />
+
+<h2 id="撰寫-Python-Script"><a href="#撰寫-Python-Script" class="headerlink" title="撰寫 Python Script"></a>撰寫 Python Script</h2><blockquote>
+<p>安裝 Python</p>
+</blockquote>
+<blockquote>
+<p>安裝 requests</p>
+</blockquote>
+<blockquote>
+<p>寫 Python ! </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">line_notify_message</span>(<span class="params">token, msg</span>):</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Authorization&#x27;</span>: <span class="string">&#x27;Bearer &#x27;</span> + token,</span><br><span class="line">        <span class="string">&#x27;content-Type&#x27;</span>: <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    payload = &#123;<span class="string">&#x27;message&#x27;</span>: msg&#125;</span><br><span class="line">    r = requests.post(<span class="string">&#x27;https://notify-api.line.me/api/notify&#x27;</span>, headers=headers, params=payload)</span><br><span class="line">    <span class="keyword">return</span> r.status_code</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 這邊放 Token</span></span><br><span class="line">    token = <span class="string">&#x27;HERE IS YOUR TOKEN&#x27;</span></span><br><span class="line">    <span class="comment"># 這邊輸入顯示的內容</span></span><br><span class="line">    message = <span class="string">&#x27;\n 你好呀 \n 我是 Line Notify \n 123 !&#x27;</span></span><br><span class="line">    line_notify_message(token, message)</span><br></pre></td></tr></table></figure>
+
+<br />
+
+<h2 id="執行-x2F-測試-script"><a href="#執行-x2F-測試-script" class="headerlink" title="執行 &#x2F; 測試 script"></a>執行 &#x2F; 測試 script</h2><blockquote>
+<p>run 看看這個 script 看看效果</p>
+</blockquote>
+<p><img src="https://i.imgur.com/v7AqxCU.png"></p>
+<br />
+
+<h2 id="透過-Crontab-設定排程"><a href="#透過-Crontab-設定排程" class="headerlink" title="透過 Crontab 設定排程"></a>透過 Crontab 設定排程</h2><blockquote>
+<p>撰寫排程</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>開啟編輯器後輸入以下語法：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">*/1 * * * * /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/yochen/Code/Python/TEST_PYTHON/LineNotify.py</span><br></pre></td></tr></table></figure>
+
+
+<p>分 時 日 月 週 執行語法 執行檔案<br>以上語法代表我要在無時無刻，每一分鐘，透過 Python 執行我指定的 Python 檔</p>
+<blockquote>
+<p>編輯成功後，檢視排程</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+
+
+<p>補充：</p>
+<ul>
+<li>vi 操作：( i 改為 Insert Mode，ESC 後 :wq 儲存退出，<a href="https://dywang.csie.cyut.edu.tw/dywang/linuxSystem/node50.html">點我</a>看更詳細教學 )</li>
+<li>尋找本機 Python 安裝連結： <code>which python3</code></li>
+</ul>
+<br />
+
+
+<blockquote>
+<p>靜待時間到來，就可以發現 ～～ 搞定嚕！</p>
+</blockquote>
+<p><img src="https://i.imgur.com/oipivCi.png"></p>
+<hr>
+<h3 id="參考文章："><a href="#參考文章：" class="headerlink" title="參考文章："></a>參考文章：</h3><ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10234115">Day 8 : LINE Notify 訊息推播通知 (Python版)</a></li>
+<li><a href="https://linux.vbird.org/linux_basic/centos7/0430cron.php">鳥哥私房菜 - 第十五章、例行性工作排程(crontab)</a></li>
+</ul>
+]]></content>
+  </entry>
+</search>
