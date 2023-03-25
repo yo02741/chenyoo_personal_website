@@ -12,6 +12,8 @@ tags:
 - 使用 `Python` 作為開發語言
 - 使用 `Crontab` 達成排程執行
 
+<!--more-->
+
 ---
 
 ## 發行 Line Notify 權杖

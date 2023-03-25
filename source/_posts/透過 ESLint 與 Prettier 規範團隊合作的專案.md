@@ -9,10 +9,13 @@ tags:
 > 
 > 當專案為團隊合作開發時，建議事先擬定團隊的規範。
 > 
-> 那通常會使用 `Linter` 來進行程式碼品質的規範，並使用 `Formatter` 規範程式碼風格。
-> 
-> 本篇使用 `Linter - ESLint` 與 `Formatter - Prettier`。
+> 那通常會使用 Linter 來進行程式碼品質的規範，並使用 Formatter 規範程式碼風格。
 
+
+- Linter 使用 `ESLint` 規範程式碼品質
+- Formatter 使用 `Prettier` 規範程式碼風格
+
+<!--more-->
 
 ### Install VSCode extensions
 - ESLint
