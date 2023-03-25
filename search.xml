@@ -13,6 +13,8 @@
 <li>使用 <code>Python</code> 作為開發語言</li>
 <li>使用 <code>Crontab</code> 達成排程執行</li>
 </ul>
+<span id="more"></span>
+
 <hr>
 <h2 id="發行-Line-Notify-權杖"><a href="#發行-Line-Notify-權杖" class="headerlink" title="發行 Line Notify 權杖"></a>發行 Line Notify 權杖</h2><blockquote>
 <p><a href="https://notify-bot.line.me/">Line Notify</a> &gt; 登入後右上角 &gt; 個人頁面 &gt; 滑到最底下的 <code>發行存取權杖（開發人員用）</code></p>
@@ -102,9 +104,14 @@
     <content><![CDATA[<blockquote>
 <p>每個工程師都有自己的 Coding Style，不同的語言也有建議的 Coding Style。</p>
 <p>當專案為團隊合作開發時，建議事先擬定團隊的規範。</p>
-<p>那通常會使用 <code>Linter</code> 來進行程式碼品質的規範，並使用 <code>Formatter</code> 規範程式碼風格。</p>
-<p>本篇使用 <code>Linter - ESLint</code> 與 <code>Formatter - Prettier</code>。</p>
+<p>那通常會使用 Linter 來進行程式碼品質的規範，並使用 Formatter 規範程式碼風格。</p>
 </blockquote>
+<ul>
+<li>Linter 使用 <code>ESLint</code> 規範程式碼品質</li>
+<li>Formatter 使用 <code>Prettier</code> 規範程式碼風格</li>
+</ul>
+<span id="more"></span>
+
 <h3 id="Install-VSCode-extensions"><a href="#Install-VSCode-extensions" class="headerlink" title="Install VSCode extensions"></a>Install VSCode extensions</h3><ul>
 <li><p>ESLint</p>
 <blockquote>
