@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://yo02741.github.io/2023/03/25/%E9%80%8F%E9%81%8E%20ESLint%20%E8%88%87%20Prettier%20%E8%A6%8F%E7%AF%84%E5%9C%98%E9%9A%8A%E5%90%88%E4%BD%9C%E7%9A%84%E5%B0%88%E6%A1%88/index.html">
 <meta property="og:site_name" content="Chenyo.">
 <meta property="og:description" content="每個工程師都有自己的 Coding Style，不同的語言也有建議的 Coding Style。 當專案為團隊合作開發時，建議事先擬定團隊的規範。 那通常會使用 Linter 來進行程式碼品質的規範，並使用 Formatter 規範程式碼風格。   Linter 使用 ESLint 規範程式碼品質 Formatter 使用 Prettier 規範程式碼風格">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/WEhJUbQ.png">
 <meta property="og:image" content="https://i.imgur.com/Pzv5ARc.png">
 <meta property="og:image" content="https://i.imgur.com/0pmyf78.png">
@@ -34,9 +34,14 @@
 <meta property="og:image" content="https://i.imgur.com/Fzf30i5.png">
 <meta property="og:image" content="https://i.imgur.com/qW1MFAz.png">
 <meta property="article:published_time" content="2023-03-25T14:59:48.000Z">
-<meta property="article:modified_time" content="2023-03-25T15:43:19.429Z">
+<meta property="article:modified_time" content="2023-03-25T17:05:25.681Z">
 <meta property="article:author" content="YU-JUNG, CHEN">
-<meta property="article:tag" content="前端, Front-end, HTML, CSS, Javascript, Vue">
+<meta property="article:tag" content="Front-end">
+<meta property="article:tag" content="Coding Style">
+<meta property="article:tag" content="Linter">
+<meta property="article:tag" content="Formatter">
+<meta property="article:tag" content="ESLint">
+<meta property="article:tag" content="Prettier">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.imgur.com/WEhJUbQ.png">
 
@@ -49,7 +54,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh'
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -94,7 +99,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切換導航欄">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -125,31 +130,31 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
       </li>
   </ul>
@@ -165,7 +170,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -203,7 +208,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yo02741.github.io/2023/03/25/%E9%80%8F%E9%81%8E%20ESLint%20%E8%88%87%20Prettier%20%E8%A6%8F%E7%AF%84%E5%9C%98%E9%9A%8A%E5%90%88%E4%BD%9C%E7%9A%84%E5%B0%88%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,10 +230,25 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2023-03-25 22:59:48 / Modified: 23:43:19" itemprop="dateCreated datePublished" datetime="2023-03-25T22:59:48+08:00">2023-03-25</time>
+              <time title="創建時間：2023-03-25 22:59:48" itemprop="dateCreated datePublished" datetime="2023-03-25T22:59:48+08:00">2023-03-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2023-03-26 01:05:25" itemprop="dateModified" datetime="2023-03-26T01:05:25+08:00">2023-03-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF-%E5%9C%98%E9%9A%8A%E5%90%88%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">前端 - 團隊合作</span></a>
+                </span>
             </span>
 
           
@@ -304,6 +324,14 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Front-end/" rel="tag"># Front-end</a>
+              <a href="/tags/Coding-Style/" rel="tag"># Coding Style</a>
+              <a href="/tags/Linter/" rel="tag"># Linter</a>
+              <a href="/tags/Formatter/" rel="tag"># Formatter</a>
+              <a href="/tags/ESLint/" rel="tag"># ESLint</a>
+              <a href="/tags/Prettier/" rel="tag"># Prettier</a>
+          </div>
 
         
 
@@ -364,10 +392,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目錄
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          本站概要
         </li>
       </ul>
 
@@ -390,8 +418,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">文章</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
 </div>
@@ -428,8 +468,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">YU-JUNG, CHEN</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 

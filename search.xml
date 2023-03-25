@@ -97,6 +97,14 @@
 <li><a href="https://linux.vbird.org/linux_basic/centos7/0430cron.php">鳥哥私房菜 - 第十五章、例行性工作排程(crontab)</a></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>玩玩有趣的技術</category>
+      </categories>
+      <tags>
+        <tag>Line</tag>
+        <tag>Python</tag>
+        <tag>Crontab</tag>
+      </tags>
   </entry>
   <entry>
     <title>透過 ESLint 與 Prettier 規範團隊合作的專案</title>
@@ -156,5 +164,16 @@
 <p><a href="https://prettier.io/">https://prettier.io/</a></p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>前端 - 團隊合作</category>
+      </categories>
+      <tags>
+        <tag>Front-end</tag>
+        <tag>Coding Style</tag>
+        <tag>Linter</tag>
+        <tag>Formatter</tag>
+        <tag>ESLint</tag>
+        <tag>Prettier</tag>
+      </tags>
   </entry>
 </search>
