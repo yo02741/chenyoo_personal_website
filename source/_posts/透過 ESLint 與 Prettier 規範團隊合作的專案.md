@@ -1,7 +1,14 @@
 ---
 title: 透過 ESLint 與 Prettier 規範團隊合作的專案
 date: 2023-03-25 22:59:48
-tags:
+categories: 前端 - 團隊合作
+tags: 
+ - Front-end
+ - Coding Style
+ - Linter
+ - Formatter
+ - ESLint
+ - Prettier
 ---
 
 

@@ -1,7 +1,11 @@
 ---
 title: 提醒這種小事情交給 Line Notify
 date: 2023-03-12 23:00:06
-tags:
+categories: 玩玩有趣的技術
+tags: 
+ - Line
+ - Python
+ - Crontab
 ---
 
 <br />
