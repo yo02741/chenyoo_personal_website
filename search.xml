@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>提醒這種小事情交給 Line Notify</title>
-    <url>/2023/03/12/line_notify_assistent/</url>
+    <url>/2023/03/12/%E6%8F%90%E9%86%92%E9%80%99%E7%A8%AE%E5%B0%8F%E4%BA%8B%E6%83%85%E4%BA%A4%E7%B5%A6%20Line%20Notify/</url>
     <content><![CDATA[<br />
 
 <blockquote>
@@ -94,6 +94,60 @@
 <li><a href="https://ithelp.ithome.com.tw/articles/10234115">Day 8 : LINE Notify 訊息推播通知 (Python版)</a></li>
 <li><a href="https://linux.vbird.org/linux_basic/centos7/0430cron.php">鳥哥私房菜 - 第十五章、例行性工作排程(crontab)</a></li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>透過 ESLint 與 Prettier 規範團隊合作的專案</title>
+    <url>/2023/03/25/%E9%80%8F%E9%81%8E%20ESLint%20%E8%88%87%20Prettier%20%E8%A6%8F%E7%AF%84%E5%9C%98%E9%9A%8A%E5%90%88%E4%BD%9C%E7%9A%84%E5%B0%88%E6%A1%88/</url>
+    <content><![CDATA[<blockquote>
+<p>每個工程師都有自己的 Coding Style，不同的語言也有建議的 Coding Style。</p>
+<p>當專案為團隊合作開發時，建議事先擬定團隊的規範。</p>
+<p>那通常會使用 <code>Linter</code> 來進行程式碼品質的規範，並使用 <code>Formatter</code> 規範程式碼風格。</p>
+<p>本篇使用 <code>Linter - ESLint</code> 與 <code>Formatter - Prettier</code>。</p>
+</blockquote>
+<h3 id="Install-VSCode-extensions"><a href="#Install-VSCode-extensions" class="headerlink" title="Install VSCode extensions"></a>Install VSCode extensions</h3><ul>
+<li><p>ESLint</p>
+<blockquote>
+<p><img src="https://i.imgur.com/WEhJUbQ.png"></p>
+</blockquote>
+</li>
+<li><p>Prettier</p>
+<blockquote>
+<p><img src="https://i.imgur.com/Pzv5ARc.png"></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="IDE-Settings"><a href="#IDE-Settings" class="headerlink" title="IDE Settings"></a>IDE Settings</h3><blockquote>
+<p>File &gt; Preferences &gt; Settings &gt; Workspace</p>
+</blockquote>
+<p>請將設定改在 Workspace 內，單獨的為此專案進行設定 ; 反之，若改在 User 則會影響每個 Project。</p>
+<blockquote>
+<p><img src="https://i.imgur.com/0pmyf78.png"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://i.imgur.com/psPmq0h.png"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://i.imgur.com/Fzf30i5.png"></p>
+</blockquote>
+<p>設定完之後，會多一個檔案如下:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .vscode/settings.json</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;editor.tabSize&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span><span class="punctuation">:</span> <span class="string">&quot;esbenp.prettier-vscode&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>之後再補上針對 <code>.js</code>、<code>.json</code> 副檔名也預設使用 prettier</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// .vscode/settings.json</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;editor.tabSize&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.formatOnSave&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.defaultFormatter&quot;</span><span class="punctuation">:</span> <span class="string">&quot;esbenp.prettier-vscode&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;[javascript]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;editor.defaultFormatter&quot;</span><span class="punctuation">:</span> <span class="string">&quot;esbenp.prettier-vscode&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;[json]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;editor.defaultFormatter&quot;</span><span class="punctuation">:</span> <span class="string">&quot;esbenp.prettier-vscode&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>之後就可以在 <code>.js</code>、<code>.json</code> 文件中，點擊右鍵 &gt; <code>Format Document With ...</code>，就可以看到預設的 formatter 是 prettier 了！</p>
+<p><img src="https://i.imgur.com/qW1MFAz.png"></p>
+<h3 id="ESLint-Settings"><a href="#ESLint-Settings" class="headerlink" title="ESLint Settings"></a>ESLint Settings</h3><p>查看 <code>package.json</code> 中 <code>eslintConfig</code> 的 <code>extends</code> </p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;extends&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;plugin:vue/recommended&quot;</span><span class="punctuation">,</span> <span class="comment">// 這邊將 essential 改成 recommended</span></span><br><span class="line">    <span class="string">&quot;eslint:recommended&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;@vue/prettier&quot;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://eslint.vuejs.org/rules/">https://eslint.vuejs.org/rules/</a></p>
+</blockquote>
+<h3 id="Prettier-Settings"><a href="#Prettier-Settings" class="headerlink" title="Prettier Settings"></a>Prettier Settings</h3><p>查看 <code>package.json</code> 中 <code>prettier</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;prettier&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;trailingComma&quot;</span><span class="punctuation">:</span> <span class="string">&quot;es5&quot;</span><span class="punctuation">,</span> <span class="comment">// 尾隨逗號</span></span><br><span class="line">    <span class="attr">&quot;tabWidth&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span> <span class="comment">// 縮排</span></span><br><span class="line">    <span class="attr">&quot;semi&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">// 結束是否加分號</span></span><br><span class="line">    <span class="attr">&quot;singleQuote&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span> <span class="comment">// 使用單引號</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://prettier.io/">https://prettier.io/</a></p>
+</blockquote>
 ]]></content>
   </entry>
 </search>
